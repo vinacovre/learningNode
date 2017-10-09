@@ -14,10 +14,11 @@ app.use('/contact', contact);
 /* Runs the function whenever our application receives a GET request (access to the page) on the root '/' path */
 app.get('/', function (request, response) {
     response.send('Hello Express! This is my main page.');
-    var x = request.headers.cookie;
+    
+    // var x = request.headers.cookie;
+    // console.log('\n\t* type: ' + typeof(x) + '\n\t* value: ' + x);
+    
     var y = request.cookies;
-
-    console.log('\n\t* type: ' + typeof(x) + '\n\t* value: ' + x);
     console.log('\n\t* type: ' + typeof(y) + '\n\t* value: ' + JSON.stringify(y) + '\n');
     // console.log(request.cookies.type); // returns --> ninja
 });

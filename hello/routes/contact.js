@@ -14,7 +14,12 @@ router.route('/')
     // response.send(contact); // equals to:
 
     response.setHeader('Set-Cookie',['type=ninja','language=javascript']);
-    response.cookie('user', 'vina');
+    // response.cookie('user', 'vina');
+    response.cookie('my_name', 'my_value', { 
+      httpOnly: true,
+      expires: new Date(Date.now() + 150000)
+    });
+    // cookie will be expired after 150000 seconds
 
     /* always send json type */
     response.json(contact);

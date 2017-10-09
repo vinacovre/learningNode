@@ -30,8 +30,10 @@ router.route('/')
     var body = request.body;
     body.name = helper.parseName(body.name);
     blocks.push(body);
+
     // without bodyParser the body is not included in "blocks" (passes "null" instead)
     response.status(201).json(request.body);
+    // response.setHeader('Content-Type', 'application/json');
   });
 // curl -X POST http://localhost:3001/blocks -d '{"name":"Vinicius","description":"VMware"}' -H 'Content-Type: application/json'
 
